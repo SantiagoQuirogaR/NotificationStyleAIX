@@ -208,7 +208,7 @@ public class NotificationStyle extends AndroidNonvisibleComponent implements OnD
             buttonIntent.putExtra("notificationId", NOTIFY_ID);
             buttonIntent.putExtra("url", url);
             final PendingIntent btnAction = PendingIntent.getBroadcast(activity, 0, buttonIntent,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
+                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
             builder.addAction(0, nameButton, btnAction);
             activity.registerReceiver(actionBroad, new IntentFilter(nameButton));
         }
